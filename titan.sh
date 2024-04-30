@@ -13,9 +13,8 @@ echo "节点社区 Telegram 群组:https://t.me/niuwuriji"
 echo "节点社区 Telegram 频道:https://t.me/niuwuriji"
 echo "节点社区 Discord 社群:https://discord.gg/GbMV5EcNWF"
 
-# 查找以 "titan_storage_" 开头的文件夹，并将结果存储到变量中
-folders=$(find /path/to/search -type d -name 'titan_storage_*')
-echo "查找以 'titan_storage_' 开头的文件夹，并将结果存储到变量中"
+# 读取加载身份码信息
+id = "D0D12B17-A819-454D-8E34-99546CCC19F3"
 
 # 让用户输入想要创建的容器数量
 container_count=1
@@ -28,6 +27,7 @@ storage_gb=18
 
 # 让用户输入存储路径（可选）
 custom_storage_path=""
+
 apt update
 
 # 检查 Docker 是否已安装
@@ -42,8 +42,9 @@ else
     echo "Docker 已安装。"
 fi
 
-# 拉取 Docker 镜像
+# 拉取Docker镜像
 docker pull nezha123/titan-edge:1.5
+
 # 创建用户指定数量的容器
 for ((i=1; i<=container_count; i++))
 do
@@ -61,14 +62,14 @@ do
     # 确保存储路径存在
     mkdir -p "$storage_path"
 
-    # 运行容器，并设置重启策略为 always
-    container_id=$(docker run -d --restart always -v "$storage_path:/root/.titanedge/storage" --name "titan$i" --net=host nezha123/titan-edge:1.5)
+    # 运行容器，并设置重启策略为always
+    container_id=$(docker run -d --restart always -v "$storage_path:/root/.titanedge/storage" --name "titan$i" --net=host  nezha123/titan-edge:1.5)
 
     echo "节点 titan$i 已经启动 容器ID $container_id"
 
     sleep 30
 
-    # 修改宿主机上的 config.toml 文件以设置 StorageGB 值和端口
+    # 修改宿主机上的config.toml文件以设置StorageGB值和端口
     docker exec $container_id bash -c "\
         sed -i 's/^[[:space:]]*#StorageGB = .*/StorageGB = $storage_gb/' /root/.titanedge/config.toml && \
         sed -i 's/^[[:space:]]*#ListenAddress = \"0.0.0.0:1234\"/ListenAddress = \"0.0.0.0:$current_rpc_port\"/' /root/.titanedge/config.toml && \
