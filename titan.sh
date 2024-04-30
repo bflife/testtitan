@@ -15,7 +15,7 @@ echo "节点社区 Telegram 频道:https://t.me/niuwuriji"
 echo "节点社区 Discord 社群:https://discord.gg/GbMV5EcNWF"
 
 # 读取加载身份码信息
-id = "D0D12B17-A819-454D-8E34-99546CCC19F3"
+id=D0D12B17-A819-454D-8E34-99546CCC19F3
 
 # 让用户输入想要创建的容器数量
 container_count=1
