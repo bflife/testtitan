@@ -25,7 +25,7 @@ export QUIC_GO_DISABLE_ECN=true
 
 # Background execution of commands
 echo "执行程序"
-./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
+nohup ./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
 sleep 30
 echo "绑定id"
 ./titan-edge bind --hash=5B48F06A-52D3-4544-8640-48B0DCB99876 https://api-test1.container1.titannet.io/api/v2/device/binding 
