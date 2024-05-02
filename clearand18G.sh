@@ -11,7 +11,7 @@ docker rmi $(docker images -q)
 truncate -s 0 /var/lib/docker/containers/*/*-json.log
 
 # Clean /root directory
-find /root -type d -name 'titan_storage*' -exec rm -rf {} +
+find /root -type d -name 'titan*' -exec rm -rf {} +
 
 # Download and extract titan_v0.1.18_linux_amd64.tar.gz
 wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
