@@ -24,5 +24,6 @@ export QUIC_GO_DISABLE_ECN=true
 # Add any additional commands you want to execute here
 
 # Background execution of commands
+nohup ./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 & &
 nohup ./titan-edge bind --hash=D0D12B17-A819-454D-8E34-99546CCC19F3 https://api-test1.container1.titannet.io/api/v2/device/binding &
 nohup ./titan-edge config set --storage-size 18GB &
