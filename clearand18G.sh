@@ -11,7 +11,7 @@ docker rmi $(docker images -q)
 truncate -s 0 /var/lib/docker/containers/*/*-json.log
 
 # Clean /root directory
-rm -rf /root/*
+find /root -type d -name 'titan_storage*' -exec rm -rf {} +
 
 # Download and extract titan_v0.1.18_linux_amd64.tar.gz
 wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
@@ -25,4 +25,4 @@ export QUIC_GO_DISABLE_ECN=true
 
 # Background execution of commands
 nohup ./titan-edge bind --hash=D0D12B17-A819-454D-8E34-99546CCC19F3 https://api-test1.container1.titannet.io/api/v2/device/binding &
-./titan-edge config set --storage-size 18GB
+nohup ./titan-edge config set --storage-size 18GB &
