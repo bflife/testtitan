@@ -14,6 +14,7 @@ truncate -s 0 /var/lib/docker/containers/*/*-json.log
 find /root -type d -name '.titanedge*' -exec rm -rf {} +
 find /root -type d -name 'titan*' -exec rm -rf {} +
 rm -rf /root/titan
+mkdir -p /root/titan/storage
 
 # Download and extract titan_v0.1.18_linux_amd64.tar.gz
 wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
