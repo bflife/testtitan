@@ -33,7 +33,6 @@ echo "绑定id"
 ./titan-edge bind --hash=39C42F62-DAEF-4543-A0DE-F8CE378EA78E https://api-test1.container1.titannet.io/api/v2/device/binding 
 echo "设置容量"
 ./titan-edge config set --storage-size 72GB 
-mkdir -p  /root/titan/storage
 ./titan-edge config set --storage-path /root/titan/storage
 pkill -f "titan-edge daemon start"
 nohup ./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
