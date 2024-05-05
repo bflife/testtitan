@@ -28,10 +28,10 @@ export QUIC_GO_DISABLE_ECN=true
 
 # Background execution of commands
 echo "执行程序"
-nohup ./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
+nohup ./titan-edge daemon start --init --url https://test-locator.titannet.io:5000/rpc/v0 &
 sleep 30
 echo "绑定id"
-./titan-edge bind --hash=39C42F62-DAEF-4543-A0DE-F8CE378EA78E https://api-test1.container1.titannet.io/api/v2/device/binding 
+./titan-edge bind --hash=62C656EE-03D4-4D0F-ABE9-0371C89AF6DB https://api-test1.container1.titannet.io/api/v2/device/binding 
 echo "设置容量"
 ./titan-edge config set --storage-size 45GB 
 #./titan-edge config set --storage-path /root/titan/storage
