@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定义titan-edge程序所在目录和启动命令
-titan_directory="/root/testtitan/titan_v0.1.18_linux_amd64"
+titan_directory="/root/titan_v0.1.18_linux_amd64"
 titan_start_command="./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 "
 
 # 检查titan-edge程序是否在运行
