@@ -29,12 +29,12 @@ export LD_LIBRARY_PATH=$LD_LIZBRARY_PATH:./libgoworkerd.so
 
 # Background execution of commands
 echo "执行程序"
-./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
+./titan-edge daemon start --init --url https://cassini-locator.titannet.io:5000/rpc/v0 &
 sleep 30
 echo "绑定id"
-./titan-edge bind --hash=FF36BBB4-A0D9-43EE-9419-E118DFBE811C https://api-test1.container1.titannet.io/api/v2/device/binding 
+./titan-edge bind --hash=your-hash-here https://api-test1.container1.titannet.io/api/v2/device/binding 
 echo "设置容量"
 ./titan-edge config set --storage-size 55GB 
 #./titan-edge config set --storage-path /root/titan/storage
 pkill -f "titan-edge daemon start"
-nohup ./titan-edge daemon start --init --url https://test-locator.titannet.io:5000/rpc/v0 &
+nohup ./titan-edge daemon start --init --url https://cassini-locator.titannet.io:5000/rpc/v0 &
