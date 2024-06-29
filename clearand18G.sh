@@ -3,7 +3,7 @@
 # Stop and remove all containers
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
-
+rm titan*.*
 # Remove all images
 docker rmi $(docker images -q)
 
@@ -17,7 +17,7 @@ rm -rf /root/titan
 #mkdir -p /root/titan/storage
 
 # Download and extract titan_v0.1.18_linux_amd64.tar.gz
-wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
+wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.19_linux_amd64.tar.gz
 tar -xvf titan_v0.1.18_linux_amd64.tar.gz
 cd titan_v0.1.18_linux_amd64
 
@@ -31,7 +31,7 @@ echo "执行程序"
 ./titan-edge daemon start --init --url https://us-locator.titannet.io:5000/rpc/v0 &
 sleep 30
 echo "绑定id"
-./titan-edge bind --hash=4AA7139E-BAF2-4598-935C-512B6D54199D https://api-test1.container1.titannet.io/api/v2/device/binding 
+./titan-edge bind --hash=53990923-F68D-48D0-9D6B-DD15BCE90518 https://api-test1.container1.titannet.io/api/v2/device/binding 
 echo "设置容量"
 ./titan-edge config set --storage-size 55GB 
 #./titan-edge config set --storage-path /root/titan/storage
