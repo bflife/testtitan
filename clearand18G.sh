@@ -37,4 +37,4 @@ echo "设置容量"
 ./titan-edge config set --storage-size 55GB 
 #./titan-edge config set --storage-path /root/titan/storage
 pkill -f "titan-edge daemon start"
-nohup ./titan-edge daemon start --init --url https://cassini-locator.titannet.io:5000/rpc/v0 &
+./titan-edge daemon start --init --url https://cassini-locator.titannet.io:5000/rpc/v0 &
