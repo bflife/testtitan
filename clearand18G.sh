@@ -34,7 +34,7 @@ sleep 30
 echo "绑定id"
 ./titan-edge bind --hash=9CAC0575-98AE-4C38-A1C2-CA13C7C22247 https://api-test1.container1.titannet.io/api/v2/device/binding 
 echo "设置容量"
-./titan-edge config set --storage-size 55GB 
+./titan-edge config set --storage-size 18GB 
 #./titan-edge config set --storage-path /root/titan/storage
 pkill -f "titan-edge daemon start"
 ./titan-edge daemon start --init --url https://cassini-locator.titannet.io:5000/rpc/v0 &
